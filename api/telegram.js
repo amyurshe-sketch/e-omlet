@@ -28,7 +28,7 @@ export default async function handler(req, res) {
 
         // Format the message for Telegram
         const telegramMessage = `
-📧 *New Contact Form Submission*
+📧 *New Contact Form E-omlet*
 
 👤 *Name:* ${name}
 📧 *Email:* ${email}
