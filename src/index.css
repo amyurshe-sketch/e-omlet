@@ -823,6 +823,7 @@ body.theme-dark .portfolio-item .btn-open-site:focus {
 /* Contact Section */
 .contact {
     position: relative;
+    padding-top: 4rem;
 }
 
 .contact::before {
@@ -909,7 +910,7 @@ body.theme-dark .form-control:focus {
 }
 
 textarea.form-control {
-    min-height: 150px;
+    min-height: 120px;
     resize: vertical;
     font-family: inherit;
 }

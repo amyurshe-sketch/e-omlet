@@ -250,19 +250,27 @@ const SuccessModal = ({ isOpen, onClose, language }) => {
   );
 };
 
-function useLocalStorageState(key, defaultValue) {
+function useLocalStorageState(key, defaultValue, options = {}) {
+  const { validate } = options;
+
   const initial = useMemo(() => {
     if (!isBrowser) {
       return defaultValue;
     }
     try {
       const stored = localStorage.getItem(key);
-      return stored ?? defaultValue;
+      if (stored == null) {
+        return defaultValue;
+      }
+      if (validate && !validate(stored)) {
+        return defaultValue;
+      }
+      return stored;
     } catch (error) {
       console.warn('Failed to read from localStorage:', error);
       return defaultValue;
     }
-  }, [key, defaultValue]);
+  }, [key, defaultValue, validate]);
 
   const [value, setValue] = useState(initial);
 
@@ -270,19 +278,32 @@ function useLocalStorageState(key, defaultValue) {
     if (!isBrowser) {
       return;
     }
+    if (validate && !validate(value)) {
+      try {
+        localStorage.removeItem(key);
+      } catch (error) {
+        console.warn('Failed to remove invalid localStorage value:', error);
+      }
+      return;
+    }
     try {
-      localStorage.setItem(key, value);
+      const valueToStore = typeof value === 'string' ? value : JSON.stringify(value);
+      localStorage.setItem(key, valueToStore);
     } catch (error) {
       console.warn('Failed to write to localStorage:', error);
     }
-  }, [key, value]);
+  }, [key, value, validate]);
 
   return [value, setValue];
 }
 
 function App() {
-  const [language, setLanguage] = useLocalStorageState('preferredLang', 'en');
-  const [theme, setTheme] = useLocalStorageState('preferredTheme', 'light');
+  const [language, setLanguage] = useLocalStorageState('preferredLang', 'en', {
+    validate: (value) => value === 'en' || value === 'it',
+  });
+  const [theme, setTheme] = useLocalStorageState('preferredTheme', 'light', {
+    validate: (value) => value === 'light' || value === 'dark',
+  });
   const [isModalOpen, setModalOpen] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
   const [formMessage, setFormMessage] = useState('');
