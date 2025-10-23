@@ -205,13 +205,19 @@ const SuccessModal = ({ isOpen, onClose, language }) => {
       return undefined;
     }
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const listener = (event) => {
       if (event.key === 'Escape') {
         onClose();
       }
     };
     document.addEventListener('keydown', listener);
-    return () => document.removeEventListener('keydown', listener);
+    return () => {
+      document.removeEventListener('keydown', listener);
+      document.body.style.overflow = previousOverflow;
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) {
@@ -266,7 +272,7 @@ function useLocalStorageState(key, defaultValue) {
 }
 
 function App() {
-  const [language, setLanguage] = useLocalStorageState('preferredLang', 'ru');
+  const [language, setLanguage] = useLocalStorageState('preferredLang', 'en');
   const [theme, setTheme] = useLocalStorageState('preferredTheme', 'light');
   const [isModalOpen, setModalOpen] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);

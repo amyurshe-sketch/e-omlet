@@ -358,9 +358,59 @@ footer .logo.handwrite {
 
 .lang-btn__text {
     font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    margin-left: 6px;
+  	font-weight: 600;
+  	letter-spacing: 0.04em;
+  	margin-left: 6px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: min(420px, 100%);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal .btn {
+    margin-top: 1.5rem;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary);
+    transform: scale(1.1);
+    outline: none;
 }
 
 .fade-text {
