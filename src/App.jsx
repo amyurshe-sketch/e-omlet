@@ -19,53 +19,53 @@ const IconGlobe = () => (
 );
 
 const NAV_LINKS = [
-  { href: '#home', labels: { ru: 'Главная', en: 'Home' } },
-  { href: '#services', labels: { ru: 'Услуги', en: 'Services' } },
-  { href: '#portfolio', labels: { ru: 'Портфолио', en: 'Portfolio' } },
-  { href: '#skills', labels: { ru: 'Навыки', en: 'Skills' } },
-  { href: '#contact', labels: { ru: 'Контакты', en: 'Contact' } },
+  { href: '#home', labels: { en: 'Home', it: 'Home' } },
+  { href: '#services', labels: { en: 'Services', it: 'Servizi' } },
+  { href: '#portfolio', labels: { en: 'Portfolio', it: 'Portfolio' } },
+  { href: '#skills', labels: { en: 'Skills', it: 'Competenze' } },
+  { href: '#contact', labels: { en: 'Contact', it: 'Contatti' } },
 ];
 
 const HERO_COPY = {
   title: {
-    ru: 'Создаю современные сайты с уникальным дизайном',
     en: 'Creating Modern Websites with Unique Design',
+    it: 'Creo siti web moderni con un design unico',
   },
   description: {
-    ru: 'Превращаю ваши идеи в цифровую реальность. Специализируюсь на создании адаптивных веб-сайтов с использованием современных технологий и трендов дизайна.',
     en: 'Transforming your ideas into digital reality. Specializing in creating responsive websites using modern technologies and design trends.',
+    it: 'Trasformo le tue idee in realtà digitale. Mi specializzo nella creazione di siti web responsive utilizzando tecnologie moderne e tendenze di design.',
   },
-  primaryCta: { ru: 'Мои работы', en: 'My Works' },
-  secondaryCta: { ru: 'Обсудить проект', en: 'Discuss Project' },
+  primaryCta: { en: 'My Works', it: 'I miei lavori' },
+  secondaryCta: { en: 'Discuss Project', it: 'Discuti il progetto' },
 };
 
 const SECTION_COPY = {
   services: {
-    title: { ru: 'Мои услуги', en: 'My Services' },
+    title: { en: 'My Services', it: 'I miei servizi' },
     subtitle: {
-      ru: 'Предоставляю полный цикл разработки - от идеи до запуска',
       en: 'Providing full development cycle - from idea to launch',
+      it: 'Offro l\'intero ciclo di sviluppo: dall\'idea al lancio',
     },
   },
   portfolio: {
-    title: { ru: 'Мои работы', en: 'My Works' },
+    title: { en: 'My Works', it: 'I miei lavori' },
     subtitle: {
-      ru: 'Примеры реализованных проектов с использованием современных технологий',
       en: 'Examples of implemented projects using modern technologies',
+      it: 'Esempi di progetti realizzati con tecnologie moderne',
     },
   },
   skills: {
-    title: { ru: 'Мои навыки', en: 'My Skills' },
+    title: { en: 'My Skills', it: 'Le mie competenze' },
     subtitle: {
-      ru: 'Технологии и инструменты, которые я использую в работе',
       en: 'Technologies and tools I use in my work',
+      it: 'Tecnologie e strumenti che utilizzo nel mio lavoro',
     },
   },
   contact: {
-    title: { ru: 'Свяжитесь со мной', en: 'Contact Me' },
+    title: { en: 'Contact Me', it: 'Contattami' },
     subtitle: {
-      ru: 'Готов обсудить ваш проект и предложить решение',
       en: 'Ready to discuss your project and offer a solution',
+      it: 'Pronto a discutere il tuo progetto e a proporre una soluzione',
     },
   },
 };
@@ -73,26 +73,26 @@ const SECTION_COPY = {
 const SERVICES = [
   {
     icon: 'fas fa-laptop-code',
-    title: { ru: 'Веб-разработка', en: 'Web Development' },
+    title: { en: 'Web Development', it: 'Sviluppo web' },
     description: {
-      ru: 'Создание современных и отзывчивых веб-сайтов с использованием HTML5, CSS3, JavaScript и современных фреймворков.',
       en: 'Creating modern and responsive websites using HTML5, CSS3, JavaScript and modern frameworks.',
+      it: 'Creazione di siti web moderni e responsive utilizzando HTML5, CSS3, JavaScript e framework moderni.',
     },
   },
   {
     icon: 'fas fa-palette',
-    title: { ru: 'UI/UX Дизайн', en: 'UI/UX Design' },
+    title: { en: 'UI/UX Design', it: 'UI/UX Design' },
     description: {
-      ru: 'Разработка интуитивно понятных интерфейсов, ориентированных на пользовательский опыт и визуальную привлекательность.',
       en: 'Developing intuitive interfaces focused on user experience and visual appeal.',
+      it: 'Sviluppo interfacce intuitive focalizzate sull\'esperienza utente e sull\'impatto visivo.',
     },
   },
   {
     icon: 'fas fa-mobile-alt',
-    title: { ru: 'Адаптивный дизайн', en: 'Responsive Design' },
+    title: { en: 'Responsive Design', it: 'Design responsive' },
     description: {
-      ru: 'Создание сайтов, которые идеально отображаются на всех устройствах - от смартфонов до десктопов.',
       en: 'Creating websites that display perfectly on all devices - from smartphones to desktops.',
+      it: 'Creazione di siti che si adattano perfettamente a tutti i dispositivi, dagli smartphone ai desktop.',
     },
   },
 ];
@@ -102,46 +102,36 @@ const PORTFOLIO = [
     url: 'https://barber-shop-self-rho.vercel.app/',
     title: 'Barber Shop',
     description: {
-      ru: 'Реальный сайт барбершопа. Современный дизайн, адаптивная верстка, быстрый запуск.',
       en: 'Live barbershop website with modern design, responsive layout, and fast launch.',
+      it: 'Sito reale per un barbershop. Design moderno, layout responsive e lancio rapido.',
     },
   },
   {
     url: 'https://building-rouge.vercel.app/',
     title: 'Building Company',
     description: {
-      ru: 'Сайт строительной компании. Профессиональный дизайн, адаптивная верстка.',
       en: 'Construction company website featuring professional design and responsive layout.',
+      it: 'Sito per un\'azienda edile. Design professionale e layout responsive.',
     },
   },
   {
     url: 'https://portfolio-hazel-rho-80.vercel.app/',
     title: 'Portfolio',
     description: {
-      ru: 'Портфолио с современным дизайном и анимациями. Адаптивный интерфейс.',
       en: 'Portfolio with modern design, smooth animations, and a fully responsive interface.',
+      it: 'Portfolio con design moderno, animazioni fluide e interfaccia completamente responsive.',
     },
   },
 ];
 
 const SKILLS = [
-  { label: { ru: 'HTML5 & CSS3', en: 'HTML5 & CSS3' }, value: 95 },
-  { label: { ru: 'JavaScript', en: 'JavaScript' }, value: 90 },
-  { label: { ru: 'React', en: 'React' }, value: 85 },
-  { label: { ru: 'UI/UX Дизайн', en: 'UI/UX Design' }, value: 80 },
+  { label: { en: 'HTML5 & CSS3', it: 'HTML5 & CSS3' }, value: 95 },
+  { label: { en: 'JavaScript', it: 'JavaScript' }, value: 90 },
+  { label: { en: 'React', it: 'React' }, value: 85 },
+  { label: { en: 'UI/UX Design', it: 'UI/UX Design' }, value: 80 },
 ];
 
 const FORM_COPY = {
-  ru: {
-    nameLabel: 'Ваше имя',
-    emailLabel: 'Email или телефон',
-    messageLabel: 'Сообщение',
-    namePlaceholder: 'Введите ваше имя',
-    emailPlaceholder: 'Введите email или телефон',
-    messagePlaceholder: 'Опишите ваш проект',
-    submit: 'Отправить сообщение',
-    sending: 'Отправка...',
-  },
   en: {
     nameLabel: 'Your Name',
     emailLabel: 'Email or Phone',
@@ -152,44 +142,54 @@ const FORM_COPY = {
     submit: 'Send Message',
     sending: 'Sending...',
   },
+  it: {
+    nameLabel: 'Il tuo nome',
+    emailLabel: 'Email o telefono',
+    messageLabel: 'Messaggio',
+    namePlaceholder: 'Inserisci il tuo nome',
+    emailPlaceholder: 'Inserisci email o telefono',
+    messagePlaceholder: 'Descrivi il tuo progetto',
+    submit: 'Invia messaggio',
+    sending: 'Invio in corso...',
+  },
 };
 
 const FORM_MESSAGES = {
-  ru: {
-    required: 'Пожалуйста, заполните все поля!',
-    invalidContact: 'Пожалуйста, введите корректный email или телефон!',
-    success: 'Сообщение успешно отправлено!',
-    error: 'Ошибка отправки сообщения. Попробуйте еще раз.',
-  },
   en: {
     required: 'Please fill in all fields!',
     invalidContact: 'Please enter a valid email or phone number!',
     success: 'Message sent successfully!',
     error: 'Error sending message. Please try again.',
   },
+  it: {
+    required: 'Compila tutti i campi, per favore!',
+    invalidContact: 'Inserisci un contatto email o telefonico valido, per favore!',
+    success: 'Messaggio inviato con successo!',
+    error: 'Errore durante l\'invio del messaggio. Riprova.',
+  },
 };
 
 const MODAL_COPY = {
-  ru: {
-    title: 'Спасибо за сообщение!',
-    message: 'Мы свяжемся с вами в ближайшее время.',
-    close: 'Закрыть',
-  },
   en: {
     title: 'Thank you for your message!',
     message: 'We will contact you soon.',
     close: 'Close',
   },
+  it: {
+    title: 'Grazie per il tuo messaggio!',
+    message: 'Ti contatteremo al più presto.',
+    close: 'Chiudi',
+  },
 };
 
 const FOOTER_COPY = {
-  ru: {
-    tagline: 'Создаю цифровые решения для вашего бизнеса',
-    rights: 'Все права защищены.',
-  },
   en: {
     tagline: 'Creating digital solutions for your business',
     rights: 'All rights reserved.',
+  },
+  it: {
+    tagline: 'Creo soluzioni digitali per il tuo business',
+    rights: 'Tutti i diritti riservati.',
   },
 };
 
@@ -283,6 +283,12 @@ function App() {
   const headerRef = useRef(null);
   const skillsRef = useRef(null);
   const messageTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    if (language !== 'en' && language !== 'it') {
+      setLanguage('en');
+    }
+  }, [language, setLanguage]);
 
   useEffect(() => {
     if (typeof document === 'undefined') {
@@ -380,7 +386,7 @@ function App() {
   }, []);
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'ru' ? 'en' : 'ru'));
+    setLanguage((prev) => (prev === 'en' ? 'it' : 'en'));
   };
 
   const toggleTheme = () => {
@@ -475,8 +481,8 @@ function App() {
     }
   };
 
-  const headerThemeLabel = language === 'ru' ? 'Сменить тему' : 'Toggle theme';
-  const headerLanguageLabel = language === 'ru' ? 'Switch to English' : 'Переключить на русский';
+  const headerThemeLabel = language === 'it' ? 'Cambia tema' : 'Toggle theme';
+  const headerLanguageLabel = language === 'en' ? 'Switch to Italian' : 'Passa all\'inglese';
 
   return (
     <>
@@ -519,7 +525,7 @@ function App() {
               >
                 <IconGlobe />
                 <span className="lang-btn__text fade-text fade-text--inline" key={`lang-indicator-${language}`}>
-                  {language === 'ru' ? 'RU' : 'EN'}
+                  {language === 'it' ? 'IT' : 'EN'}
                 </span>
               </button>
             </div>
@@ -641,7 +647,7 @@ function App() {
                     </p>
                     <a href={item.url} target="_blank" rel="noopener noreferrer" className="btn-open-site">
                       <span className="fade-text fade-text--inline" key={`${item.title}-cta-${language}`}>
-                        {language === 'ru' ? 'Открыть сайт' : 'Open Site'}
+                        {language === 'it' ? 'Apri il sito' : 'Open Site'}
                       </span>
                     </a>
                   </div>
