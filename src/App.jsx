@@ -255,8 +255,13 @@ function useLocalStorageState(key, defaultValue) {
     if (!isBrowser) {
       return defaultValue;
     }
-    const stored = localStorage.getItem(key);
-    return stored ?? defaultValue;
+    try {
+      const stored = localStorage.getItem(key);
+      return stored ?? defaultValue;
+    } catch (error) {
+      console.warn('Failed to read from localStorage:', error);
+      return defaultValue;
+    }
   }, [key, defaultValue]);
 
   const [value, setValue] = useState(initial);
@@ -265,7 +270,11 @@ function useLocalStorageState(key, defaultValue) {
     if (!isBrowser) {
       return;
     }
-    localStorage.setItem(key, value);
+    try {
+      localStorage.setItem(key, value);
+    } catch (error) {
+      console.warn('Failed to write to localStorage:', error);
+    }
   }, [key, value]);
 
   return [value, setValue];
