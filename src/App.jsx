@@ -555,7 +555,7 @@ function App() {
               >
                 <IconGlobe />
                 <span className="lang-btn__text fade-text fade-text--inline" key={`lang-indicator-${language}`}>
-                  {language === 'it' ? 'IT' : 'EN'}
+                  {language === 'en' ? 'IT' : 'EN'}
                 </span>
               </button>
             </div>
