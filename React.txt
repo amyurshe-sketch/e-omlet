@@ -1,0 +1,131 @@
+Frontend (Vite + React)
+=======================
+cd "/media/alex/Local Disk1/projects/my-first-app"
+npm run dev
+# dev server (Vite) uses http://localhost:3000 and opens automatically
+
+# альтернативно можно руками открыть http://localhost:3000 после запуска
+
+# прод-сборка (если нужна)
+# npm run build && npm run preview
+
+теперь FastApi:
+
+cd "/media/alex/Local Disk1/projects/my-fastapi-backend"
+source venv/bin/activate
+uvicorn main:app --reload --host localhost --port 8000
+or
+uvicorn app.main:app --reload --host localhost --port 8000
+
+ls -la          -структура
+
+source venv/bin/activate   -виртуальное окружение для python for FastApi обязательно
+
+uvicorn main:app --reload --host localhost --port 8000  -запускаем сервер
+
+# Убедитесь что находитесь в правильной папке
+cd "/media/alex/Local Disk1/projects/my-fastapi-backend"
+
+# Активируем окружение (если еще не активировано)
+source venv/bin/activate
+
+# Запускаем сервер (localhost:8000)
+uvicorn main:app --reload --host localhost --port 8000
+
+http://localhost:8000/docs
+curl http://localhost:8000/users
+
+ai agent
+
+cd ai-agent
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:create_app --factory --reload --host 0.0.0.0 --port 8000
+
+Вариант через Docker (проще): 
+docker compose up --build из 
+каталога ai-agent. После билда API будет на 
+http://localhost:8000/, swagger — http://localhost:8000/docs.
+
+
+PostgresSQL:
+
+sudo -u postgres psql  -Переходим в пользователя postgres
+
+sudo -u postgres psql -l  -что есть в базе
+
+sudo systemctl status postgresql.service   -активировано или нет
+
+sudo -u postgres psql -d myfastapi  -переходим в проект========================SELECT
+|
+myfastapi=# \d fastapi_user  -выдает ошибку
+|
+myfastapi=# \d users  ---структура таблицы users
+
+Redis ============================
+
+sudo systemctl enable --now redis-server  -- включить
+
+redis-cli PING  -- проверка "pong"
+
+sudo systemctl stop redis-server  --  остановить  --  redis-cli shutdown  --  мягко
+
+sudo systemctl restart redis-server  --  перезапуск
+
+journalctl -u redis-server -f --  логи
+
+Отключить автозапуск (Linux): sudo systemctl disable redis-server и sudo systemctl stop redis-server
+
+Github =============================
+
+git add -A
+git commit -m "обновил секцию hero и стили кнопок"     -сохраняем изменения с комментарием
+
+git push      
+
+-- Создаем базу данных
+CREATE DATABASE myfastapi;
+
+-- Создаем пользователя
+CREATE USER fastapi_user WITH PASSWORD 'password123';
+
+-- Даем права пользователю
+GRANT ALL PRIVILEGES ON DATABASE myfastapi TO fastapi_user;
+
+-- Выходим из psql
+\q
+
+sudo -u postgres psql -l  -Проверяем что база создалась, Должны увидеть в списке базу myfastapi
+
+q -выход
+
+еще раз входим, даем права на создание таблиц:
+
+sudo -u postgres psql
+
+-- Даем права на создание таблиц в базе myfastapi
+GRANT ALL PRIVILEGES ON DATABASE myfastapi TO fastapi_user;
+
+-- Даем права на схему public
+GRANT ALL ON SCHEMA public TO fastapi_user;
+
+-- Даем права на создание таблиц
+GRANT CREATE ON SCHEMA public TO fastapi_user;
+
+-- Выходим
+\q
+
+
+import resend
+
+resend.api_key = "re_a9GZcyMb_9Pe7a1GyFpJK6ggTsGWeP8Ag"
+
+r = resend.Emails.send({
+  "from": "onboarding@resend.dev",
+  "to": "a.myurshe@gmail.com",
+  "subject": "Hello World",
+  "html": "<p>Congrats on sending your <strong>first email</strong>!</p>"
+})
+
+

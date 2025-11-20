@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import StudioLogo from './components/StudioLogo';
 
 const IconMoon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -592,9 +593,7 @@ function App() {
       <header className="glass-dark" ref={headerRef}>
         <div className="container">
           <nav className="navbar" itemScope itemType="https://schema.org/SiteNavigationElement">
-            <div className="logo handwrite" style={{ whiteSpace: 'nowrap', minWidth: 'auto' }}>
-              Studio NN
-            </div>
+            <StudioLogo style={{ whiteSpace: 'nowrap', minWidth: 'auto' }} />
             <div className="nav-links">
               {NAV_LINKS.map((link) => (
                 <a
@@ -884,9 +883,7 @@ function App() {
 
       <footer className="glass-dark">
         <div className="container">
-          <div className="logo handwrite" style={{ whiteSpace: 'nowrap', minWidth: 'auto' }}>
-            Studio NN
-          </div>
+          <StudioLogo style={{ whiteSpace: 'nowrap', minWidth: 'auto' }} />
           <p>
             <span className="fade-text fade-text--block" key={`footer-tagline-${language}`}>
               {FOOTER_COPY[language].tagline}

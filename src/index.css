@@ -50,6 +50,16 @@
     --shadow: var(--shadow-dark);
 }
 
+html, body, #root {
+    min-height: 100%;
+    height: auto;
+    overflow-y: auto;
+}
+
+#root {
+    width: 100%;
+}
+
 body {
     min-height: 100vh;
     width: 100%;
@@ -166,6 +176,11 @@ body.theme-dark footer.glass-dark {
 section {
     padding: 6rem 2rem 5rem 2rem; /* Увеличил верхний отступ для header */
     scroll-margin-top: 80px; /* Добавил отступ для навигации */
+    overflow: visible;
+}
+
+main {
+    overflow: visible;
 }
 
 .container {
